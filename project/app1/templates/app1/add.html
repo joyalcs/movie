@@ -1,0 +1,16 @@
+{% extends "home_base.html" %}
+{%load static%}
+{%block content%}
+<div class="d-flex justify-content-center">
+
+<form method="POST" action="" enctype="multipart/form-data" class="">
+    {%csrf_token%}
+    <h3 class="ms-3">New Movie</h3>
+    <input class="my-3"type="text" placeholder="enter your movie name" name="name"><br>
+    <input class="my-3" type="text" placeholder="Description" name="description"><br>
+    <input class="my-3" type="text" placeholder="Year" name="year"><br>
+    <input class="my-3" type="file" placeholder="Image" name="img"><br>
+    <input class="my-3 ms-5 btn btn-primary" type="submit">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "home_base.html" %}
+{% load static %}
+{% block content %}
+<div class="d-flex justify-content-center">
+<div class="card" style="width: 25rem;">
+    {% if movie.img %}
+    <img class="card-img-top" src="{{ movie.img.url }}" alt="Movie Image">
+    {% else %}
+    <p>No image available</p>
+{% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.name }} ({{ movie.year }})</h5>
+      <p class="card-text">{{ movie.description }}</p>
+      <div class="d-flex justify-content-center">
+        <a href="{% url 'app1:movie-update' movie.id %}" class="btn btn-primary ">Update</a>
+        <a href="{% url 'app1:dele' movie.id %}" class="btn btn-primary ms-2">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

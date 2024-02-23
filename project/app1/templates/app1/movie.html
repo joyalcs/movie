@@ -1,0 +1,19 @@
+{% extends "home_base.html" %}
+{% load static %}
+{% block content %}
+<section class="d-flex flex-wrap">
+    {% for i in movie_lists %}
+    <div class="card" style="width: 18rem; margin: 10px;">
+        {% if i.img %}
+        <img src="{{ i.img.url }}" class="card-img-top" alt="...">
+        {% else %}
+        <p>No image available</p>
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{i.name}} ({{i.year}})</h5>
+            <a href="{% url 'app1:movie' i.id %}" class="btn btn-primary">Detail</a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
